@@ -90,6 +90,12 @@
     text-decoration: none;
     display: block;
     border: none;
+    width: 100%; 
+    transition: background 0.3s ease;
+}
+
+.btnReserved {
+    background-color: #e63946; 
 }
 
 .btnPrimary:hover {

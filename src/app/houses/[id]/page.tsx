@@ -2,6 +2,7 @@ import { houses } from '../../../../api-server/src/mock-data';
 import Image from 'next/image';
 import Link from 'next/link';
 import { routeConstants } from "@/core/route.constants";
+import { BookingButton } from '@/components/bookingButton';
 
 export default async function HouseDetailPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params; 
@@ -16,7 +17,6 @@ export default async function HouseDetailPage({ params }: { params: Promise<{ id
         </div>
         );
     }
-
 
     return (
         <div className="container">
@@ -64,21 +64,16 @@ export default async function HouseDetailPage({ params }: { params: Promise<{ id
             </section>
 
             <aside>
-                <div className="sidebarBooking">
-                <div className="priceBig">
-                    {house.price}€ <span style={{fontSize: '16px', fontWeight: 400, color: 'var(--text-light)'}}>/ noche</span>
-                </div>
-                
-                <button className="btnPrimary" style={{width: '100%', cursor: 'pointer'}}>
-                    Reservar
-                </button>
-                
-                <div style={{marginTop: '15px', textAlign: 'center', fontSize: '13px', color: 'var(--text-light)'}}>
-                    <p>Reserva garantizada</p>
-                </div>
+                <div className="sidebarBooking" style={{ border: '1px solid #eee', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
+                    <div className="priceBig" style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '20px' }}>
+                        {house.price}€ <span style={{fontSize: '16px', fontWeight: 400, color: '#666'}}>/ noche</span>
+                    </div>
+                        <BookingButton house={house} />
+                    <div style={{marginTop: '15px', textAlign: 'center', fontSize: '13px', color: '#888'}}>
+                        <p>Reserva garantizada</p>
+                    </div>
                 </div>
             </aside>
-
             </div>
         </main>
         </div>
