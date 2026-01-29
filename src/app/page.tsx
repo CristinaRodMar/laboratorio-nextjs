@@ -1,6 +1,7 @@
 import { House } from '../../api-server/src/mock-data';
 import Image from 'next/image';
 import Link from 'next/link';
+import { routeConstants } from '@/core/route.constants';
 
 async function getHouses(): Promise<House[]> {
   const res = await fetch('http://localhost:3001/api/houses', {});
@@ -11,12 +12,17 @@ async function getHouses(): Promise<House[]> {
 export default async function Page() {
   const houses = await getHouses();
 
-  return (
+ return (
     <div className="container">
       <nav className="nav">
         <div className="navContent">
-          <div className="logo">Renting Houses</div>
-          <Link href="/nosotros" style={{fontWeight: 600, color: '#444'}}>Reservas</Link>
+          <Link href={routeConstants.root} className="logo" style={{ textDecoration: 'none' }}>
+            Renting Houses
+          </Link>
+          
+          <Link href={routeConstants.reservas} style={{fontWeight: 600, color: '#444'}}>
+            Reservas
+          </Link>
         </div>
       </nav>
 
@@ -40,7 +46,7 @@ export default async function Page() {
                 <h2 className="houseTitle">{house.name}</h2>
                 <p className="houseCity">{house.city}</p>
                 
-                <Link href={`/houses/${house.id}`} className="btnPrimary">
+                <Link href={routeConstants.houseDetail(house.id)} className="btnPrimary">
                   Ver disponibilidad
                 </Link>
               </div>
