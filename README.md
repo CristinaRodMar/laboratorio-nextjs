@@ -1,3 +1,16 @@
+# App de Casas Rurales
+
+## Funcionalidades Implementadas
+
+* **Implementar la pantalla de listado de casas rurales**.
+* **Implementar la pantalla de detalle de una casa rural.** 
+* **Utiliza un rendering apropiado para cada página.** 
+* **La aplicación debe ser funcional y navegable entre las dos pantallas.**
+* **Listado de casas rurales.**
+* **Detalle de una casa rural.**
+* **Implementar una funcionalidad.**
+* **Añadir botón para reservar una casa rural.**
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
