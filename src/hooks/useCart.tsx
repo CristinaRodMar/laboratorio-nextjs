@@ -28,8 +28,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     );
 }
 
-export const useCart = () => {
+export function useCart() {
     const context = useContext(CartContext);
-    if (!context) throw new Error("useCart debe usarse dentro de CartProvider");
+    if (!context) {
+        return { cart: [], toggleCart: () => {} };
+    }
     return context;
-};
+}

@@ -9,17 +9,10 @@ export function BookingButton({ house }: { house: House }) {
 
     return (
         <button 
-    onClick={() => toggleCart(house)}
-    className="btnPrimary" 
-    style={{ 
-        width: '100%', 
-        cursor: 'pointer',
-        backgroundColor: isSelected ? '#e63946' : 'var(--primary)', 
-        border: 'none',
-        transition: 'background 0.3s ease'
-    }}
->
-    {isSelected ? 'Quitar reserva' : 'Reservar'}
-</button>
+            onClick={() => toggleCart(house)}
+            className={`btnPrimary ${isSelected ? 'btnReserved' : ''}`}
+        >
+            {isSelected ? 'Quitar reserva' : 'Reservar'}
+        </button>
     );
 }
