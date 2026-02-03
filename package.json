@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "dev:all": "run-p dev start:api-server",
+    "dev": "run-p dev:next start:api-server",
+    "dev:next": "next dev",
+    "dev:all": "run-p dev:next start:api-server",
     "build": "next build",
     "build:clean": "rimraf .next && next build",
     "start": "next start",
